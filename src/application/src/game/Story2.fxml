@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller2">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/game.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="boat" blendMode="DARKEN" fitHeight="43.0" fitWidth="103.0" layoutX="221.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/boat.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="batot" fitHeight="70.0" fitWidth="46.0" layoutX="4.0" layoutY="131.0" onMouseClicked="#movebatot" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/batot.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="move" layoutX="3.0" layoutY="14.0" mnemonicParsing="false" onAction="#moveboat" text="Move" />
+      <ImageView fx:id="mickey" fitHeight="53.0" fitWidth="46.0" layoutX="104.0" layoutY="126.0" onMouseClicked="#movemickey" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/mickey.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pluto" fitHeight="53.0" fitWidth="29.0" layoutX="58.0" layoutY="302.0" onMouseClicked="#movepluto" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/dog.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="zeze" fitHeight="70.0" fitWidth="66.0" layoutX="14.0" layoutY="218.0" onMouseClicked="#movezeze" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/zeze.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="meme" fitHeight="68.0" fitWidth="48.0" layoutX="77.0" layoutY="174.0" onMouseClicked="#movememe" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/meme.png" />
+         </image>
+      </ImageView>
+     
+   </children>
+</AnchorPane>

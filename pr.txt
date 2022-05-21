@@ -1,0 +1,2052 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class Controller2 {
+    public ImageView mickey, zeze,boat,pluto,batot,meme;
+    private int flag=0;
+    AlertBox al=new AlertBox();
+    List<ICrosser> L=new ArrayList<>();
+
+
+    List<ICrosser> R=new ArrayList<>();
+
+
+    List<ICrosser> Boat=new ArrayList<>();
+public Button move;
+
+    int counter = 0;
+    boolean right = true;
+    TranslateTransition forward = new TranslateTransition();
+    TranslateTransition backward = new TranslateTransition();
+    TranslateTransition F = new TranslateTransition();
+    TranslateTransition x = new TranslateTransition();
+    TranslateTransition g = new TranslateTransition();
+    TranslateTransition p = new TranslateTransition();
+    TranslateTransition fo = new TranslateTransition();
+    TranslateTransition fo2 = new TranslateTransition();
+
+    Goat G=new Goat();
+    Farmer2 f2=new Farmer2();
+    Farmer3 f3=new Farmer3();
+    Farmer4 f4=new Farmer4();
+    Farmer5 f5=new Farmer5();
+    Story2 st2=new Story2();
+public void end(){
+    if(L.size()==0)
+    {
+        al.Display2("Wiiner","Chicken Fucken");
+        Stage stage = (Stage) move.getScene().getWindow();
+        stage.close();
+
+    }
+    }
+    public void getinst2(){
+
+    al.Display("Instruction",st2.getInstructions());
+
+}
+    public void initialize2(){
+if(flag==0) {
+    L.add(G);
+    L.add(f2);
+    L.add(f3);
+    L.add(f4);
+    L.add(f5);
+    flag++;
+}
+    }
+
+    public void moveboat(ActionEvent event) {
+        if (st2.isValid(R, L, Boat)) {
+            if (isBoatOnTheLeftBank()) {
+                if ((g.getToX() == 233 - 104 || g.getToX() == 277 - 104) && (F.getToX() == 227 - 4 || F.getToX() == 272 - 4)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(432 - 104);
+                    g.setToY(121 - 126);
+                    g.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(488 - 4);
+                    F.setToY(135 - 131);
+                    F.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f4);
+                    Boat.remove(f5);
+                    R.add(f4);
+                    R.add(f5);
+                    end();
+                } else if ((g.getToX() == 233 - 104 || g.getToX() == 277 - 104) && (p.getToX() == 233 - 58 || p.getToX() == 281 - 58)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(432 - 104);
+                    g.setToY(121 - 126);
+                    g.play();
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(463 - 58);
+                    p.setToY(296 - 302);
+                    p.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove((f4));
+                    Boat.remove(G);
+                    R.add(f4);
+                    R.add(G);
+                end();
+                } else if ((g.getToX() == 233 - 104 || g.getToX() == 277 - 104) && (fo2.getToX() == 221 - 77 || fo2.getToX() == 263 - 77)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(432 - 104);
+                    g.setToY(121 - 126);
+                    g.play();
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(430 - 77);
+                    fo2.setToY(184 - 174);
+                    fo2.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove((f4));
+                    Boat.remove(f2);
+                    R.add(f4);
+                    R.add(f2);
+                    end();
+                } else if ((g.getToX() == 233 - 104 || g.getToX() == 277 - 104) && (fo.getToX() == 235 - 14 || fo.getToX() == 273 - 14)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(432 - 104);
+                    g.setToY(121 - 126);
+                    g.play();
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(515 - 14);
+                    fo.setToY(217 - 218);
+                    fo.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove((f4));
+                    Boat.remove(f3);
+                    R.add(f4);
+                    R.add(f3);
+                    end();
+                } else if (g.getToX() == 233 - 104 || g.getToX() == 277 - 104) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(432 - 104);
+                    g.setToY(121 - 126);
+                    g.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f4);
+                    R.add(f4);
+                    end();
+                } else if ((p.getToX() == 233 - 58 || p.getToX() == 281 - 58) && (fo.getToX() == 235 - 14 || fo.getToX() == 273 - 14)) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(463 - 58);
+                    p.setToY(296 - 302);
+                    p.play();
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(515 - 14);
+                    fo.setToY(217 - 218);
+                    fo.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f3);
+                    Boat.remove(G);
+                    R.add(f3);
+                    R.add(G);
+                    end();
+                } else if ((p.getToX() == 233 - 58 || p.getToX() == 281 - 58) && (fo2.getToX() == 221 - 77 || fo2.getToX() == 263 - 77)) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(463 - 58);
+                    p.setToY(296 - 302);
+                    p.play();
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(430 - 77);
+                    fo2.setToY(184 - 174);
+                    fo2.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f2);
+                    Boat.remove(G);
+                    R.add(f2);
+                    R.add(G);
+                    end();
+                } else if ((p.getToX() == 233 - 58 || p.getToX() == 281 - 58) && (F.getToX() == 227 - 4 || F.getToX() == 272 - 4)) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(463 - 58);
+                    p.setToY(296 - 302);
+                    p.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(488 - 4);
+                    F.setToY(135 - 131);
+                    F.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f5);
+                    Boat.remove(G);
+                    R.add(f5);
+                    R.add(G);
+                    end();
+                } else if ((p.getToX() == 233 - 58 || p.getToX() == 281 - 58)) {
+                    System.out.println("pluto can't sail boat");
+                } else if ((fo2.getToX() == 221 - 77 || fo2.getToX() == 263 - 77) && (F.getToX() == 227 - 4 || F.getToX() == 272 - 4)) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(430 - 77);
+                    fo2.setToY(184 - 174);
+                    fo2.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(488 - 4);
+                    F.setToY(135 - 131);
+                    F.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f2);
+                    Boat.remove(f5);
+                    R.add(f2);
+                    R.add(f5);
+                    end();
+                } else if ((fo2.getToX() == 221 - 77 || fo2.getToX() == 263 - 77) && (fo.getToX() == 235 - 14 || fo.getToX() == 273 - 14)) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(430 - 77);
+                    fo2.setToY(184 - 174);
+                    fo2.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(zeze);
+                    F.setToX(515 - 14);
+                    F.setToY(217 - 218);
+                    F.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f2);
+                    Boat.remove(f3);
+                    R.add(f2);
+                    R.add(f3);
+                    end();
+                } else if ((fo2.getToX() == 221 - 77 || fo2.getToX() == 263 - 77)) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(430 - 77);
+                    fo2.setToY(184 - 174);
+                    fo2.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f2);
+                    R.add(f2);
+                    end();
+                } else if ((F.getToX() == 227 - 4 || F.getToX() == 272 - 4) && (fo.getToX() == 235 - 14 || fo.getToX() == 273 - 14)) {
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(488 - 4);
+                    F.setToY(135 - 131);
+                    F.play();
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(515 - 14);
+                    fo.setToY(217 - 218);
+                    fo.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f3);
+                    Boat.remove(f5);
+                    R.add(f3);
+                    R.add(f5);
+                    end();
+                } else if ((F.getToX() == 227 - 4 || F.getToX() == 272 - 4)) {
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(488 - 4);
+                    F.setToY(135 - 131);
+                    F.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f5);
+                    R.add(f5);
+                    end();
+                } else if ((fo.getToX() == 235 - 14 || fo.getToX() == 273 - 14)) {
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(515 - 14);
+                    fo.setToY(217 - 218);
+                    fo.play();
+                    forward.setDuration(Duration.millis(300));
+                    forward.setNode(boat);
+                    forward.setToX(80);
+                    forward.setToY(0);
+                    forward.play();
+                    counter++;
+                    Boat.remove(f3);
+                    R.add(f3);
+                    end();
+                } else {
+                    System.out.println("some one should sail the boat");
+                }
+
+
+            }
+
+
+            ////////////////////////////////////////////////////////////////
+
+            else {
+                if ((g.getToX() == 316 - 104 || g.getToX() == 353 - 104) && (F.getToX() == 313 - 4 || F.getToX() == 346 - 4)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(0);
+                    g.setToY(0);
+                    g.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(0);
+                    F.setToY(0);
+                    F.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f4);
+                    L.add(f4);
+                    Boat.remove(f5);
+                    L.add(f5);
+                    end();
+                } else if ((g.getToX() == 316 - 104 || g.getToX() == 353 - 104) && (p.getToX() == 316 - 58 || p.getToX() == 359 - 58)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(0);
+                    g.setToY(0);
+                    g.play();
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(0);
+                    p.setToY(0);
+                    p.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f4);
+                    L.add(f4);
+                    Boat.remove(G);
+                    L.add(G);
+                    end();
+                } else if ((g.getToX() == 316 - 104 || g.getToX() == 353 - 104) && (fo2.getToX() == 301 - 77 || fo2.getToX() == 353 - 77)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(0);
+                    g.setToY(0);
+                    g.play();
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(0);
+                    fo2.setToY(0);
+                    fo2.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f4);
+                    L.add(f4);
+                    Boat.remove(f2);
+                    L.add(f2);
+                    end();
+                } else if ((g.getToX() == 316 - 104 || g.getToX() == 353 - 104) && (fo.getToX() == 315 - 14 || fo.getToX() == 353 - 14)) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(0);
+                    g.setToY(0);
+                    g.play();
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(0);
+                    fo.setToY(0);
+                    fo.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f4);
+                    L.add(f4);
+                    Boat.remove(f3);
+                    L.add(f3);
+                    end();
+                } else if (g.getToX() == 316 - 104 || g.getToX() == 353 - 104) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(0);
+                    g.setToY(0);
+                    g.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f4);
+                    L.add(f4);
+                    end();
+                } else if ((p.getToX() == 316 - 58 || p.getToX() == 359 - 58) && (fo.getToX() == 315 - 14 || fo.getToX() == 353 - 14)) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(0);
+                    p.setToY(0);
+                    p.play();
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(0);
+                    fo.setToY(0);
+                    fo.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(G);
+                    L.add(G);
+                    Boat.remove(f3);
+                    L.add(f3);
+                    end();
+                } else if ((p.getToX() == 316 - 58 || p.getToX() == 359 - 58) && (fo2.getToX() == 301 - 77 || fo2.getToX() == 353 - 77)) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(0);
+                    p.setToY(0);
+                    p.play();
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(0);
+                    fo2.setToY(0);
+                    fo2.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(G);
+                    L.add(G);
+                    Boat.remove(f2);
+                    L.add(f2);
+                    end();
+                } else if ((p.getToX() == 316 - 58 || p.getToX() == 359 - 58) && (F.getToX() == 313 - 4 || F.getToX() == 346 - 4)) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(0);
+                    p.setToY(0);
+                    p.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(0);
+                    F.setToY(0);
+                    F.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(G);
+                    L.add(G);
+                    Boat.remove(f5);
+                    L.add(f5);
+                    end();
+                } else if ((p.getToX() == 316 - 58 || p.getToX() == 359 - 58)) {
+                    System.out.println("pluto can't sail boat");
+                } else if ((fo2.getToX() == 301 - 77 || fo2.getToX() == 353 - 77) && (F.getToX() == 313 - 4 || F.getToX() == 346 - 4)) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(0);
+                    fo2.setToY(0);
+                    fo2.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(0);
+                    F.setToY(0);
+                    F.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f2);
+                    L.add(f2);
+                    Boat.remove(f5);
+                    L.add(f5);
+                    end();
+                } else if ((fo2.getToX() == 301 - 77 || fo2.getToX() == 353 - 77) && (fo.getToX() == 315 - 14 || fo.getToX() == 353 - 14)) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(0);
+                    fo2.setToY(0);
+                    fo2.play();
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(zeze);
+                    F.setToX(0);
+                    F.setToY(0);
+                    F.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f2);
+                    L.add(f2);
+                    Boat.remove(f3);
+                    L.add(f3);
+                    end();
+                } else if ((fo2.getToX() == 301 - 77 || fo2.getToX() == 353 - 77)) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(0);
+                    fo2.setToY(0);
+                    fo2.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f2);
+                    L.add(f2);
+                    end();
+                } else if ((F.getToX() == 313 - 4 || F.getToX() == 346 - 4) && (fo.getToX() == 315 - 14 || fo.getToX() == 353 - 14)) {
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(0);
+                    F.setToY(0);
+                    F.play();
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(0);
+                    fo.setToY(0);
+                    fo.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f3);
+                    L.add(f3);
+                    Boat.remove(f5);
+                    L.add(f5);
+                    end();
+                } else if ((F.getToX() == 313 - 4 || F.getToX() == 346 - 4)) {
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(0);
+                    F.setToY(0);
+                    F.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f5);
+                    L.add(f5);
+                    end();
+                } else if ((fo.getToX() == 315 - 14 || fo.getToX() == 353 - 14)) {
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(0);
+                    fo.setToY(0);
+                    fo.play();
+                    backward.setDuration(Duration.millis(300));
+                    backward.setNode(boat);
+                    backward.setToX(0);
+                    backward.setToY(0);
+                    backward.play();
+                    counter++;
+                    Boat.remove(f3);
+                    L.add(f3);
+                    end();
+                } else {
+                    System.out.println("some one should sail the boat");
+                }
+
+            }
+        }
+        else
+        {
+            if(Boat.contains(G)&&Boat.contains(f3))
+            {
+                al.Display("Error","Over Weighted");
+
+            }
+            else if (Boat.contains(G))
+            {
+                al.Display("Error","Pluto Can't Sail");
+            }
+            else if(Boat.size()==0)
+            {
+
+                al.Display("Error","No One On Boat");
+            }
+            else
+            {
+                al.Display("Error","Over Weighted");
+            }
+
+        }
+
+
+    }
+
+    public boolean isBoatOnTheLeftBank() {
+        if(counter%2==0)
+            return true;
+        else
+            return false;
+    }
+
+    public void movebatot(MouseEvent event) {
+initialize2();
+        if (isBoatOnTheLeftBank()) {
+            if (F.getToX() == 227 - 4 || F.getToX() == 272 - 4) {
+                F.setNode(batot);
+                F.setToX(0);
+                F.setToY(0);
+                F.play();
+                Boat.remove(f5);
+                L.add(f5);
+            } else if (p.getToX() != 281 - 58 && g.getToX() != 277 - 104 && fo.getToX() != 273 - 14 && fo2.getToX() != 263 - 77) {
+                if (F.getToX() != 488 - 4) {
+
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(272 - 4);
+                    F.setToY(200 - 131);
+                    F.play();
+
+                    L.remove(f5);
+                    Boat.add(f5);
+                }
+
+            } else if (p.getToX() != 233 - 58 && g.getToX() != 233 - 104 && fo.getToX() != 235 - 14 && fo2.getToX() != 221 - 77) {
+                if (F.getToX() != 488 - 4) {
+
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(227 - 4);
+                    F.setToY(200 - 131);
+                    F.play();
+
+                    L.remove(f5);
+                    Boat.add(f5);
+                }
+
+            }
+
+
+        } else {
+
+            if (F.getToX() == 313 - 4 || F.getToX() == 346 - 4) {
+                F.setNode(batot);
+                F.setToX(488 - 4);
+                F.setToY(135 - 131);
+                F.play();
+
+                Boat.remove(f5);
+                R.add(f5);
+
+            } else if (p.getToX() != 316 - 58 && g.getToX() != 316 - 104 && fo.getToX() != 315 - 14 && fo2.getToX() != 301 - 77) {
+                if (F.getToX() == 488 - 4) {
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(313 - 4);
+                    F.setToY(199 - 131);
+                    F.play();
+
+                    Boat.add(f5);
+                    R.remove(f5);
+                }
+
+            } else if (p.getToX() != 359 - 58 && g.getToX() != 353 - 104 && fo.getToX() != 353 - 14 && fo2.getToX() != 353 - 77) {
+                if (F.getToX() == 488 - 4) {
+                    F.setDuration(Duration.millis(300));
+                    F.setNode(batot);
+                    F.setToX(346 - 4);
+                    F.setToY(200 - 131);
+                    F.play();
+
+                    Boat.add(f5);
+                    R.remove(f5);
+                }
+
+            }
+
+
+        }
+
+    }
+
+    public void movezeze(MouseEvent event) {
+initialize2();
+        if(isBoatOnTheLeftBank())
+        {
+            if(fo.getToX()==235-14||fo.getToX()==273-14)
+            {
+                fo.setNode(zeze);
+                fo.setToX(0);
+                fo.setToY(0);
+                fo.play();
+                Boat.remove(f3);
+                L.add(f3);
+
+            }
+
+            else if(p.getToX()!=281-58&&g.getToX()!=277-104&&F.getToX()!=272-4&&fo2.getToX()!=263-77)
+            {
+                if(fo.getToX()!=515-14) {
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(273 - 14);
+                    fo.setToY(199 - 218);
+                    fo.play();
+
+                    L.remove(f3);
+                    Boat.add(f3);
+
+                }                }
+
+            else  if(p.getToX()!=233-58&&g.getToX()!=233-104&&F.getToX()!=227-4&&fo2.getToX()!=221-77)
+                {
+                    if(fo.getToX()!=515-14) {
+                        fo.setDuration(Duration.millis(300));
+                        fo.setNode(zeze);
+                        fo.setToX(235-14);
+                        fo.setToY(200-218);
+                        fo.play();
+
+                        L.remove(f3);
+                        Boat.add(f3);
+
+                    }
+
+                }
+
+        }
+
+        else
+        {
+            if(fo.getToX()==315-14||fo.getToX()==353-14)
+        {
+            fo.setNode(zeze);
+            fo.setToX(515-14);
+            fo.setToY(217-218);
+            fo.play();
+
+            Boat.remove(f3);
+            R.add(f3);
+
+
+        }
+
+        else if(p.getToX()!=316-58&&g.getToX()!=316-104&&F.getToX()!=313-4&&fo2.getToX()!=301-77)
+            {
+                if(fo.getToX()==515-14) {
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(315 - 14);
+                    fo.setToY(200 - 218);
+                    fo.play();
+
+                    Boat.add(f3);
+                    R.remove(f3);
+
+                }
+                   }
+
+
+
+        else    if(p.getToX()!=359-58&&g.getToX()!=353-104&&F.getToX()!=346-4&&fo2.getToX()!=353-77)
+            {
+                if(fo.getToX()==515-14) {
+                    fo.setDuration(Duration.millis(300));
+                    fo.setNode(zeze);
+                    fo.setToX(353-14);
+                    fo.setToY(199-218);
+                    fo.play();
+
+                    Boat.add(f3);
+                    R.remove(f3);
+                }
+            }
+
+
+
+
+        }
+    }
+
+
+
+    public void movemickey(MouseEvent event) {
+initialize2();
+        if(isBoatOnTheLeftBank())
+        {
+
+            if(g.getToX()==233-104||g.getToX()==277-104)
+            {
+                g.setNode(mickey);
+                g.setToX(0);
+                g.setToY(0);
+                g.play();
+                Boat.remove(f4);
+                L.add(f4);
+
+
+            }
+
+            else if(p.getToX()!=281-58&&F.getToX()!=272-4&&fo.getToX()!=273-14&&fo2.getToX()!=263-77&&g.getToX()!=432-104)
+            {
+                g.setDuration(Duration.millis(300));
+                g.setNode(mickey);
+                g.setToX(277-104);
+                g.setToY(219-126);
+                g.play();
+
+                L.remove(f4);
+                Boat.add(f4);
+
+
+            }
+
+            else if(p.getToX()!=233-58&&F.getToX()!=227-4&&fo.getToX()!=235-14&&fo2.getToX()!=221-77&&g.getToX()!=432-104)
+
+            {
+
+                g.setDuration(Duration.millis(300));
+                g.setNode(mickey);
+                g.setToX(233-104);
+                g.setToY(219-126);
+                g.play();
+
+                L.remove(f4);
+                Boat.add(f4);
+
+            }
+
+        }
+
+
+
+
+        else {
+            if (g.getToX() == 316 - 104 || g.getToX() == 353 - 104) {
+                g.setNode(mickey);
+                g.setToX(432 - 104);
+                g.setToY(121 - 126);
+                g.play();
+
+                Boat.remove(f4);
+                R.add(f4);
+
+
+            } else if (p.getToX() != 316 - 58 && F.getToX() != 313 - 4 && fo.getToX() != 315 - 14 && fo2.getToX() != 301 - 77) {
+                if (g.getToX() == 432 - 104) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(316 - 104);
+                    g.setToY(217 - 126);
+                    g.play();
+
+
+                    Boat.add(f4);
+                    R.remove(f4);
+
+                }
+            } else if (p.getToX() != 359 - 58 && F.getToX() != 346 - 4 && fo.getToX() != 353 - 14 && fo2.getToX() != 353 - 77) {
+
+                if (g.getToX() == 432 - 104) {
+                    g.setDuration(Duration.millis(300));
+                    g.setNode(mickey);
+                    g.setToX(353 - 104);
+                    g.setToY(216 - 126);
+                    g.play();
+
+
+                    Boat.add(f4);
+                    R.remove(f4);
+
+                }
+
+            }
+        }}
+
+        public void movepluto(MouseEvent event) {
+initialize2();
+        if(isBoatOnTheLeftBank())
+        {
+            if(p.getToX()==281-58||p.getToX()==233-58)
+            {
+                p.setNode(pluto);
+                p.setToX(0);
+                p.setToY(0);
+                p.play();
+                Boat.remove(G);
+                L.add(G);
+
+
+            }
+
+            else if(F.getToX()!=272-4&&g.getToX()!=277-104&&fo.getToX()!=273-14&&fo2.getToX()!=263-77) {
+
+                if(p.getToX()!=463-58) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(281 - 58);
+                    p.setToY(208 - 298);
+                    p.play();
+
+                    L.remove(G);
+                    Boat.add(G);
+
+                }
+
+            }
+
+             else   if(F.getToX()!=227-4&&g.getToX()!=233-104&&fo.getToX()!=235-14&&fo2.getToX()!=221-77)
+                {
+                     if(p.getToX()!=463-58) {
+                        p.setDuration(Duration.millis(300));
+                        p.setNode(pluto);
+                        p.setToX(233-58);
+                        p.setToY(214-298);
+                        p.play();
+                        L.remove(G);
+                        Boat.add(G);
+
+
+                    } }}
+
+        else
+        {
+            if(p.getToX()==316-58||p.getToX()==359-58)
+        {
+            p.setNode(pluto);
+            p.setToX(463-58);
+            p.setToY(296-302);
+            p.play();
+
+
+            Boat.remove(G);
+            R.add(G);
+        }
+
+        else if(F.getToX()!=313-4&&g.getToX()!=316-104&&fo.getToX()!=315-14&&fo2.getToX()!=301-77) {
+                if(p.getToX()==463-58) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(316-58);
+                    p.setToY(211-298);
+                    p.play();
+
+                    Boat.add(G);
+                    R.remove(G);
+
+
+
+                }}
+
+          else  if(F.getToX()!=346-4&&g.getToX()!=353-104&&fo.getToX()!=353-14&&fo2.getToX()!=353-77)
+            {
+                if(p.getToX()==463-58) {
+                    p.setDuration(Duration.millis(300));
+                    p.setNode(pluto);
+                    p.setToX(359-58);
+                    p.setToY(211-298);
+                    p.play();
+
+                    Boat.add(G);
+                    R.remove(G);
+            }
+            }
+    }}
+
+    public void movememe(MouseEvent event) {
+initialize2();
+        if(isBoatOnTheLeftBank())
+        {
+            if(fo2.getToX()==263-77||fo2.getToX()==221-77)
+            {
+                //System.out.println(" "+fo.getToX());
+                fo2.setNode(meme);
+                fo2.setToX(0);
+                fo2.setToY(0);
+                fo2.play();
+                Boat.remove(f2);
+                L.add(f2);
+
+
+            }
+
+            else if(F.getToX()!=272-4&&g.getToX()!=277-104&&fo.getToX()!=273-14&&p.getToX()!=281-58)
+            {
+                if(fo2.getToX()!=430-77) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(263-77);
+                    fo2.setToY(191-165);
+                    fo2.play();
+
+                    L.remove(f2);
+                    Boat.add(f2);
+
+                }
+
+            }
+            else   if(F.getToX()!=227-4&&g.getToX()!=233-104&&fo.getToX()!=235-14&&p.getToX()!=233-58)
+                {
+                    if(fo2.getToX()!=430-77) {
+                        fo2.setDuration(Duration.millis(300));
+                        fo2.setNode(meme);
+                        fo2.setToX(221 - 77);
+                        fo2.setToY(191 - 165);
+                        fo2.play();
+
+                        L.remove(f2);
+                        Boat.add(f2);
+                    }
+                }
+        }
+
+
+        else {
+            if (fo2.getToX() == 301 - 77 || fo2.getToX() == 353 - 77) {
+                fo2.setNode(meme);
+                fo2.setToX(430 - 77);
+                fo2.setToY(184 - 174);
+                fo2.play();
+
+                Boat.remove(f2);
+                R.add(f2);
+
+
+            }
+            else if(F.getToX() != 313 - 4 && g.getToX() != 316 - 104 && fo.getToX() != 315 - 14 && p.getToX() != 316 - 58) {
+                if (fo2.getToX() == 430 - 77) {
+                    fo2.setDuration(Duration.millis(300));
+                    fo2.setNode(meme);
+                    fo2.setToX(301 - 77);
+                    fo2.setToY(200 - 165);
+                    fo2.play();
+
+                    Boat.add(f2);
+                    R.remove(f2);
+                }
+
+            }
+            else  if (F.getToX() != 353 - 4 && g.getToX() != 353 - 104 && fo.getToX() != 353 - 14 && p.getToX() != 359 - 58) {
+
+                        if (fo2.getToX() == 430 - 77) {
+                            fo2.setDuration(Duration.millis(300));
+                            fo2.setNode(meme);
+                            fo2.setToX(353 - 77);
+                            fo2.setToY(199 - 165);
+                            fo2.play();
+
+                            Boat.add(f2);
+                            R.remove(f2);
+                        }
+
+                    }
+
+            }
+        }
+
+
+
+
+
+
+
+}
+_______________________________________________________________________
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+import javafx.animation.TranslateTransition;
+
+public class Controller implements ICrosserController{
+	public ImageView boat, farmer, goat,plant,fox;
+
+AlertBox al=new AlertBox();
+
+
+	int counter = 0;
+	boolean right = true;
+	TranslateTransition forward = new TranslateTransition();
+	TranslateTransition backward = new TranslateTransition();
+	TranslateTransition F = new TranslateTransition();
+	TranslateTransition x = new TranslateTransition();
+	TranslateTransition g = new TranslateTransition();
+	TranslateTransition p = new TranslateTransition();
+	TranslateTransition fo = new TranslateTransition();
+	TranslateTransition fo2 = new TranslateTransition();
+
+
+	/*TranslateTransition x3 = new TranslateTransition();
+	TranslateTransition x2 = new TranslateTransition();
+	TranslateTransition x5 = new TranslateTransition();
+	TranslateTransition x6 = new TranslateTransition();
+	TranslateTransition x7 = new TranslateTransition();*/
+
+
+public  Button S1,S2,move;
+
+	List<ICrosser> L=new ArrayList<>();
+
+
+	List<ICrosser> R=new ArrayList<>();
+
+
+	List<ICrosser> Boat=new ArrayList<>();
+	ICrosser i;
+	//ICrosserStrategy st;
+	Story1 st=new Story1();
+Story2 st2=new Story2();
+
+	Farmer f=new Farmer();
+	Goat Goat=new Goat();
+	Fox Fox=new Fox();
+	Plant Plant=new Plant();
+int flag=0;
+
+//public static  Stage primayStage=new Stage();
+
+
+	public void newscene(String scenename) throws Exception {
+		Stage primaryStage = new Stage();
+
+		Parent root = FXMLLoader.load(getClass().getResource(scenename));
+		Scene scene = new Scene(root, 593, 400);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		primaryStage.setTitle("River Crossing Game");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void story1(ActionEvent event) throws Exception {
+
+
+
+
+		Stage stage = (Stage) S1.getScene().getWindow();
+		stage.close();
+		newscene("/application/Story1.fxml");
+		al.Display("Instruction",st.getInstructions());
+
+		}
+
+	public void end(){
+		if(L.size()==0) {
+
+			al.Display2("winner", "Chicken");
+			Stage stage = (Stage) move.getScene().getWindow();
+			stage.close();
+
+		}
+	}
+
+	public void story2(ActionEvent event) throws Exception {
+
+		Stage stage = (Stage) S2.getScene().getWindow();
+		stage.close();
+		newscene("/application/Story2.fxml");
+		al.Display("Instruction",st2.getInstructions());
+
+	}
+	public void Initialize2() {
+		L.add(Fox);
+		L.add(f);
+		L.add(Goat);
+		L.add(Plant);
+	}
+/*L=st.getInitialCrossers();
+		L=st.getInitialCrossers();
+		for (int i=0;i<L.size();i++)
+			System.out.println(" "+L.get(i).geteatingrank());
+*/
+
+
+	public void moveboat(ActionEvent event) {
+
+		if (st.isValid(R, L, Boat)) {
+
+			if (isBoatOnTheLeftBank()) {
+				if (g.getToX() == 126 && F.getToX() == 250) {
+					g.setDuration(Duration.millis(300));
+					g.setNode(goat);
+					g.setToX(309);
+					g.setToY(0);
+					g.play();
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(454);
+					F.setToY(8);
+					F.play();
+					forward.setDuration(Duration.millis(300));
+					forward.setNode(boat);
+					forward.setToX(80);
+					forward.setToY(0);
+					forward.play();
+					counter++;
+
+					R.add(f);
+					R.add(Goat);
+					Boat.remove(f);
+					Boat.remove(Goat);
+end();
+
+				} else if (p.getToX() == 168 && F.getToX() == 250) {
+					p.setDuration(Duration.millis(300));
+					p.setNode(plant);
+					p.setToX(417);
+					p.setToY(13);
+					p.play();
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(454);
+					F.setToY(8);
+					F.play();
+					forward.setDuration(Duration.millis(300));
+					forward.setNode(boat);
+					forward.setToX(80);
+					forward.setToY(0);
+					forward.play();
+					counter++;
+					R.add(f);
+					R.add(Plant);
+					Boat.remove(f);
+					Boat.remove(Plant);
+					end();
+				} else if (fo.getToX() == 206 && F.getToX() == 250) {
+					fo.setDuration(Duration.millis(300));
+					fo.setNode(fox);
+					fo.setToX(420);
+					fo.setToY(5);
+					fo.play();
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(454);
+					F.setToY(8);
+					F.play();
+					forward.setDuration(Duration.millis(300));
+					forward.setNode(boat);
+					forward.setToX(80);
+					forward.setToY(0);
+					forward.play();
+					counter++;
+					R.add(f);
+					R.add(Fox);
+					Boat.remove(f);
+					Boat.remove(Fox);
+					end();
+				} else if (F.getToX() == 250) {
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(454);
+					F.setToY(8);
+					F.play();
+					forward.setDuration(Duration.millis(300));
+					forward.setNode(boat);
+					forward.setToX(80);
+					forward.setToY(0);
+					forward.play();
+					counter++;
+					R.add(f);
+					Boat.remove(f);
+					end();
+				} else {
+
+
+					System.out.println("the farmer must be in the boat");
+				}
+			} else {
+				if (F.getToX() == 288 && g.getToX() == 259) {
+					g.setDuration(Duration.millis(300));
+					g.setNode(goat);
+					g.setToX(0);
+					g.setToY(0);
+					g.play();
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(0);
+					F.setToY(0);
+					F.play();
+					backward.setDuration(Duration.millis(300));
+					backward.setNode(boat);
+					backward.setToX(0);
+					backward.setToY(0);
+					backward.play();
+					counter++;
+					L.add(f);
+					L.add(Goat);
+					Boat.remove(f);
+					Boat.remove(Goat);
+					end();
+				} else if (F.getToX() == 288 && p.getToX() == 290) {
+					p.setDuration(Duration.millis(300));
+					p.setNode(plant);
+					p.setToX(0);
+					p.setToY(0);
+					p.play();
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(0);
+					F.setToY(0);
+					F.play();
+					backward.setDuration(Duration.millis(300));
+					backward.setNode(boat);
+					backward.setToX(0);
+					backward.setToY(0);
+					backward.play();
+					counter++;
+					L.add(f);
+					L.add(Plant);
+					Boat.remove(f);
+					Boat.remove(Plant);
+					end();
+				} else if (F.getToX() == 288 && fo.getToX() == 328) {
+					fo.setDuration(Duration.millis(300));
+					fo.setNode(fox);
+					fo.setToX(0);
+					fo.setToY(0);
+					fo.play();
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(0);
+					F.setToY(0);
+					F.play();
+					backward.setDuration(Duration.millis(300));
+					backward.setNode(boat);
+					backward.setToX(0);
+					backward.setToY(0);
+					backward.play();
+					counter++;
+					L.add(f);
+					L.add(Fox);
+					Boat.remove(f);
+					Boat.remove(Fox);
+					end();
+				} else if (F.getToX() == 288) {
+					F.setDuration(Duration.millis(300));
+					F.setNode(farmer);
+					F.setToX(0);
+					F.setToY(0);
+					F.play();
+					backward.setDuration(Duration.millis(300));
+					backward.setNode(boat);
+					backward.setToX(0);
+					backward.setToY(0);
+					backward.play();
+					counter++;
+					L.add(f);
+					Boat.remove(f);
+					System.out.println(""+L.size());
+					end();
+				} else {
+
+
+					System.out.println("The farmer must be on the boat");
+				}
+			}
+
+		}
+		else
+		{
+			if((L.contains(Goat)&&L.contains(Plant))||(R.contains(Goat)&&R.contains(Plant)))
+			{
+al.Display("Error","Goat Will Eat Plant");
+			}
+			else if((L.contains(Goat)&&L.contains(Fox))||(R.contains(Goat)&&R.contains(Fox)))
+			{
+				al.Display("Error","Fox Will Eat Goat");
+
+			}
+			else
+			{
+				al.Display("Error","Farmer Must Be On Boat To Sail");
+			}
+		}
+
+	}
+
+
+	public boolean isBoatOnTheLeftBank() {
+		if(counter%2==0)
+			return true;
+		else
+			return false;
+	}
+
+	public void movefarmer(MouseEvent event) {
+
+
+		//Boat.add(L.remove(0));
+/*for (int i = 0; i < L.size(); i++) {
+	ImageView im =new ImageView();
+	im.setImage(L.get(i).getImages()[0]);*/
+if(flag==0)
+{
+	Initialize2();
+	flag++;
+
+}
+
+		if(isBoatOnTheLeftBank())
+		{
+			if(F.getToX()==250)
+			{
+				F.setNode(farmer);
+				F.setToX(0);
+				F.setToY(0);
+				F.play();
+				Boat.remove(f);
+				L.add(f);
+			}
+
+
+			else
+			{
+				F.setDuration(Duration.millis(300));
+				F.setNode(farmer);
+
+				F.setToX(250);
+				F.setToY(54);
+				F.play();
+
+				Boat.add(f);
+				L.remove(f);
+				//L=st.getInitialCrossers();
+		/*		for (int i=0;i<L.size();i++)
+					System.out.println(" "+L.get(i).geteatingrank());
+
+				System.out.println(""+L.size());
+
+*/
+			}}
+		else
+
+		{   if(F.getToX()==454) {
+			F.setDuration(Duration.millis(300));
+			F.setNode(farmer);
+			F.setToX(458-170);
+			F.setToY(184-139);
+			F.play();
+			R.remove(f);
+			Boat.add(f);
+		}
+		else
+		{
+			F.setDuration(Duration.millis(300));
+			F.setNode(farmer);
+			F.setToX(454);
+			F.setToY(8);
+			F.play();
+			Boat.remove(f);
+			R.add(f);
+
+		}
+		}
+
+
+
+	}
+
+
+	public void movefox(MouseEvent event) {
+		if(flag==0)
+		{
+			Initialize2();
+			flag++;
+
+		}
+		if (isBoatOnTheLeftBank())
+
+		{
+			if (g.getToX() == 126 || p.getToX() == 168) {
+				/*x.setNode(fox);
+				x.setToX(0);
+				x.setToY(0);
+				x.play();*/
+			}
+
+			else if (fo.getToX() == 206) {
+
+				fo.setNode(fox);
+				fo.setToX(0);
+				fo.setToY(0);
+				fo.play();
+				Boat.remove(Fox);
+				L.add(Fox);
+
+			}
+
+
+			else  {
+
+				fo.setDuration(Duration.millis(300));
+				fo.setNode(fox);
+				fo.setToX(206);
+				fo.setToY(-11);
+				fo.play();
+				L.remove(Fox);
+				Boat.add(Fox);
+
+
+			}}
+		else
+		{  if(g.getToX() == 259 || p.getToX() == 290)
+		{
+			/*x5.setNode(fox);
+			x5.setToX(420);
+			x5.setToY(5);
+			x5.play();*/
+
+		}
+		else if(fo.getToX()==420)
+		{
+			fo.setDuration(Duration.millis(300));
+			fo.setNode(fox);
+			fo.setToX(458-130);
+			fo.setToY(-15);
+			fo.play();
+
+			R.remove(Fox);
+			Boat.add(Fox);
+		}
+
+		else if(fo.getToX()==328)
+		{
+			fo.setDuration(Duration.millis(300));
+			fo.setNode(fox);
+			fo.setToX(420);
+			fo.setToY(5);
+			fo.play();
+			Boat.remove(Fox);
+			R.add(Fox);
+		}
+
+
+		}
+
+	}
+
+
+	public void movegoat(MouseEvent event) {
+		if(flag==0)
+		{
+			Initialize2();
+			flag++;
+
+		}
+		if(isBoatOnTheLeftBank())
+		{
+			if(p.getToX() == 168 || fo.getToX() ==206 )
+			{
+				/*x2.setNode(goat);
+				x2.setToX(0);
+				x2.setToY(0);
+				x2.play();*/
+			}
+
+			else if(g.getToX()==126)
+			{
+				g.setNode(goat);
+				g.setToX(0);
+				g.setToY(0);
+				g.play();
+				Boat.remove(Goat);
+				L.add(Goat);
+
+			}
+			else if (g.getToX()!=309) {
+
+				g.setDuration(Duration.millis(300));
+				g.setNode(goat);
+				g.setToX(226-100);
+				g.setToY(219-126);
+				g.play();
+
+				L.remove(Goat);
+				Boat.add(Goat);
+
+			}
+		}
+		else {
+			if(p.getToX() == 290 || fo.getToX() ==328)
+			{
+				/*x6.setNode(goat);
+				x6.setToX(309);
+				x6.setToY(0);
+				x6.play();*/
+
+			}
+			else if(g.getToX()==309)
+			{
+				g.setNode(goat);
+				g.setToX(309-50);
+				g.setToY(90);
+				g.play();
+
+				R.remove(Goat);
+				Boat.add(Goat);
+
+
+			}
+
+			else if(g.getToX()==259)
+			{
+				g.setNode(goat);
+				g.setToX(309);
+				g.setToY(0);
+				g.play();
+
+				Boat.remove(Goat);
+				R.add(Goat);
+			}
+
+		}
+
+	}
+	public void moveplant(MouseEvent event) {
+		if(flag==0)
+		{
+			Initialize2();
+			flag++;
+
+		}
+		if(isBoatOnTheLeftBank())
+		{
+			if(g.getToX() == 126 || fo.getToX() ==206 )
+			{
+			    /*x3.setNode(plant);
+				x3.setToX(0);
+				x3.setToY(0);
+				x3.play();*/
+			}
+
+			else if(p.getToX()==226-58)
+			{
+				p.setNode(plant);
+				p.setToX(0);
+				p.setToY(0);
+				p.play();
+				Boat.remove(Plant);
+				L.add(Plant);
+
+			}
+			else if(p.getToX()!=417)
+			{
+				p.setDuration(Duration.millis(300));
+				p.setNode(plant);
+				p.setToX(226-58);
+				p.setToY(219-302);
+				p.play();
+				L.remove(Plant);
+				Boat.add(Plant);
+
+			}
+		}
+		else
+		{ if(g.getToX() == 259 || fo.getToX() ==328)
+		{
+			/*x3.setNode(plant);
+			x3.setToX(417);
+			x3.setToY(13);
+			x3.play();*/
+
+		}
+		else if(p.getToX()==417)
+		{ p.setNode(plant);
+			p.setToX(290);
+			p.setToY(-75);
+			p.play();
+			R.remove(Plant);
+			Boat.add(Plant);
+		}
+
+
+		else if(p.getToX()==290)
+		{ p.setNode(plant);
+			p.setToX(417);
+			p.setToY(13);
+			p.play();
+			Boat.remove(Plant);
+			R.add(Plant);
+
+		}
+		}
+
+	}
+
+
+	public void newGame(ICrosserStrategy gameStrategy) {
+
+	}
+
+
+	public void resetGame() {
+
+	}
+
+	@Override
+	public String getInstructions() {
+
+		return null;
+	}
+public void getinst(){
+	al.Display("Instruction",st.getInstructions());
+}
+
+	public List<ImageView> getCrossersOnLeftBank() {
+		return null;
+
+	}
+
+	@Override
+	public List<ICrosser> getCrossersOnRightBank() {
+
+		return null;
+	}
+
+	public int getNumberOfSails() {
+
+		return counter;
+	}
+
+	@Override
+	public boolean canMove(List<ICrosser> crossers, boolean fromLeftToRightBank) {
+
+		return false;
+	}
+
+	@Override
+	public void doMove(List<ICrosser> crossers, boolean fromLeftToRightBank) {
+
+	}
+
+	@Override
+	public boolean canUndo() {
+		return false;
+	}
+
+	@Override
+	public boolean canRedo() {
+		return false;
+	}
+
+	@Override
+	public void undo() {
+
+	}
+
+	@Override
+	public void redo() {
+
+	}
+
+	@Override
+	public void saveGame() {
+
+	}
+
+	@Override
+	public void loadGame() {
+
+	}
+
+	@Override
+	public List<List<ICrosser>> solveGame() {
+		return null;
+	}
+
+}
+________________________________________________________________________
+package application;
+
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import static javafx.geometry.Pos.CENTER;
+
+public class AlertBox {
+  static   Controller c=new Controller();
+
+    public static void Display(String title,String message)
+    {
+        Stage window=new Stage();
+     window.initModality(Modality.APPLICATION_MODAL);
+     window.setTitle(title);
+     window.setMinWidth(250);
+     Label label1=new Label();
+     label1.setText(message);
+     Button CloseButton = new Button("Continue");
+     CloseButton.setOnAction(e->window.close());
+     VBox layout=new VBox(20);
+     layout.getChildren().addAll(label1,CloseButton);
+     layout.setAlignment(Pos.CENTER);
+     Scene scene =new Scene(layout);
+     window.setScene(scene);
+     window.showAndWait();
+
+    }
+    public static void Display2(String title,String message)
+    {
+        Stage window=new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle(title);
+        window.setMinWidth(250);
+        Label label1=new Label();
+        label1.setText(message);
+        Button CloseButton = new Button("Continue2");
+        CloseButton.setOnAction(e->
+        {
+
+            try {
+                c.newscene("/application/start.fxml");
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+            window.close();
+        });
+        VBox layout=new VBox(20);
+        layout.getChildren().addAll(label1,CloseButton);
+        layout.setAlignment(Pos.CENTER);
+        Scene scene =new Scene(layout);
+        window.setScene(scene);
+        window.showAndWait();
+    }
+}
+____________________________________________________________
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Story2 implements ICrosserStrategy {
+
+	
+	public boolean isValid(List<ICrosser> right, List<ICrosser> left, List<ICrosser> boatRiders) {
+        boolean valid = false;
+        for (int i = 0; i < boatRiders.size(); i++) {
+            ICrosser x = boatRiders.get(i);
+            if (x.cansail()) {
+                valid = true;
+                break;
+            }
+        }
+        if (valid == false) {
+            return false;
+        }
+        if (boatRiders.size() >= 3) {
+            return false;
+        } else if (boatRiders.size() == 2) {
+           int weight;
+           weight=boatRiders.get(0).getweight()+boatRiders.get(1).getweight();
+        	if(weight>100)
+                  return false;
+        }
+        else
+            return true;
+        return true;
+    }
+
+ 
+    public List<ICrosser> getInitialCrossers() {
+        List<ICrosser> C = new ArrayList<>();
+        Factory f = new Factory();
+        C.add(new Farmer2());
+        C.add(new Farmer3());
+        C.add(new Farmer4());
+        C.add(new Farmer5());
+        C.add(f.getCrosser("Goat"));
+        return C;
+    }
+
+
+    public String getInstructions() {
+	    String Text;
+	    Text="A Duck family need to cross a river in a small raft.\nZeze(Rose T-Shirt) weighs 90Kg,Mickey Mouse weighs 80Kg,Batot\nweighs 60Kg,Meme(Red T-Shirt) weighs 40Kg,and they have \nPluto(Dog) who weighs 20Kg\n\nRules:\n\n1)The raft cannot bear a load heavier than 100 Kg.\n\nHow can they all get to the other side with Pluto?";
+       return Text;
+    }
+
+}
+
+______________________________________________________
+package application;
+
+import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
+
+import java.util.ArrayList;
+import java.util.List;
+public class Story1   implements ICrosserStrategy {
+
+	public boolean isValid(List<ICrosser> right, List<ICrosser> left, List<ICrosser> boatRiders) {
+        System.out.println(" "+boatRiders.size());
+	    boolean valid = false;
+        for (int i = 0; i < boatRiders.size(); i++) {
+            ICrosser x;                    x= boatRiders.get(i);
+            if (x.cansail()) {
+                valid = true;
+                break;
+            }
+
+        }
+
+        if (valid == false) {
+            return false;
+        }
+        if (left.size() == 3) {
+            return false;
+        }  else if (left.size() == 2) {
+            int diff=left.get(0).geteatingrank()-left.get(1).geteatingrank();
+        if(diff==1 ||diff==-1)
+            return false;
+        }
+        if(right.size()==3)
+            return false;
+        else if(right.size()==2)
+        {
+            int diff2=right.get(0).geteatingrank()-right.get(1).geteatingrank();
+            if(diff2 ==1|| diff2==-1)
+                return false;
+        }
+
+
+        return true;
+    }
+
+ 
+    public List<ICrosser> getInitialCrossers() {
+        List<ICrosser> c = new ArrayList<>();
+        Factory f = new Factory();
+        c.add(new Farmer());
+        c.add(new Plant());
+        c.add(f.getCrosser("Fox"));
+        c.add(f.getCrosser("Goat"));
+        //for (int i=0;i<c.size();i++)
+        //System.out.println(" "+c.get(i).geteatingrank());
+        return c;
+
+    }
+
+ 
+    public String getInstructions() {
+	    String Text=new String();
+
+	    Text="A Farmer want to cross a river and take with him\nTom(Cat),Jerry(Mouse),and a Cheese\n\nRules:\n\n1)The Farmer is the only one who can steer the\n raft.He can only take one passenger(Tom,\nJerry,or the Cheese)in addition to himself.\n\n2)If Tom and Jerry are alone in the same\nriver bank,Tom Will Eat Jerry\n\n3)If Jerry and Cheese are alone on the\nsame bank,Jerry will eat Cheese\n\nHow can the Farmer get Tom,Jerry,and the\nCheese a cross the river without any of them being\neaten?" ;
+
+        return Text;
+    }
+
+}
+
+____________________________________________________________________________
